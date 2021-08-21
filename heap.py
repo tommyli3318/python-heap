@@ -30,6 +30,11 @@ class heap:
         if self.is_max_heap:
             res = -res
         return res
+    
+    def peek(self):
+        if not self.heap:
+            raise LookupError("Cannot peek into empty heap")
+        return self.heap[0] if not self.is_max_heap else -self.heap[0]
 
     def replace(self, x):
         if self.is_max_heap:
